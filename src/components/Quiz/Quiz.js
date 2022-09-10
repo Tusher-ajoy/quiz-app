@@ -1,5 +1,4 @@
 import { useEffect, useReducer, useState } from "react";
-import Countdown from "react-countdown";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import Answers from "../Answers/Answers";
@@ -25,29 +24,47 @@ const Quiz = () => {
   const [singleAnswer, setSingleAnswer] = useState([]);
   const [questionSetting, setQuestionSetting] = useState([]);
   const [userAnswer, dispatcher] = useReducer(myReducer, []);
+  const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(0);
 
   const navigate = useNavigate();
   const { currentUser } = useAuth();
   const { state } = useLocation();
 
-  //countdown render
-  const renderer = ({ minutes, seconds, completed }) => {
-    return (
-      <span>
-        {minutes < 10 ? `0${minutes}` : minutes}:
-        {seconds < 10 ? `0${seconds}` : seconds}
-      </span>
-    );
-  };
-  const onComplete = ({ completed }) => {
-    if (completed) {
-      if (questionSetting?.timing === "wholeQuestion") {
-        return submitQuiz();
-      } else {
-        return nextQuestion();
+  //calculate percentage of progress
+  const percentage =
+    questions.length > 0 ? ((currentQuestion + 1) / questions.length) * 100 : 0;
+
+  //countdown timer function questionSetting?.time * 6
+  useEffect(() => {
+    let myInterval = setInterval(() => {
+      if (seconds > 0) {
+        setSeconds(seconds - 1);
       }
-    }
-  };
+      if (seconds === 0) {
+        if (minutes === 0) {
+          clearInterval(myInterval);
+          if (questionSetting?.timing === "wholeQuestion") {
+            submitQuiz();
+          } else {
+            if (percentage === 100) {
+              submitQuiz();
+            } else {
+              nextQuestion();
+              setMinutes(questionSetting?.time);
+            }
+          }
+        } else {
+          setMinutes(minutes - 1);
+          setSeconds(59);
+        }
+      }
+    }, 1000);
+    return () => {
+      clearInterval(myInterval);
+    };
+  });
+  //countdownEnd
 
   useEffect(() => {
     fetch(`https://quizzzical.herokuapp.com/getQuestion`, {
@@ -69,9 +86,13 @@ const Quiz = () => {
       body: JSON.stringify({ qId: state.qId }),
     })
       .then((res) => res.json())
-      .then((data) => setQuestionSetting(data[0]));
+      .then((data) => {
+        setQuestionSetting(data[0]);
+        setMinutes(data[0]?.time);
+      });
   }, [state]);
 
+  //handle select
   const handleChange = (e) => {
     const questionId = questions[currentQuestion]?._id;
     const { value, checked } = e.target;
@@ -95,10 +116,6 @@ const Quiz = () => {
       setCurrentQuestion((preCurrentQ) => preCurrentQ - 1);
     }
   };
-
-  //calculate percentage of progress
-  const percentage =
-    questions.length > 0 ? ((currentQuestion + 1) / questions.length) * 100 : 0;
 
   // calculate result
   let userAns = [];
@@ -136,7 +153,6 @@ const Quiz = () => {
       })
       .catch((err) => console.log(err));
   };
-  const timer = questionSetting?.time * 60000 || 60000;
   return (
     <div className={classes.quiz}>
       <div className="container">
@@ -148,15 +164,12 @@ const Quiz = () => {
           <div className={`col-md-8 p-4 pt-5 mt-4 ${classes.quizContainer}`}>
             {/* Timer */}
             <div className={classes.timer}>
-              <h3>
-                {
-                  <Countdown
-                    date={Date.now() + timer}
-                    renderer={renderer}
-                    onComplete={onComplete}
-                  />
-                }
-              </h3>
+              {minutes === 0 && seconds === 0 ? null : (
+                <h2>
+                  {minutes < 10 ? `0${minutes}` : minutes}:
+                  {seconds < 10 ? `0${seconds}` : seconds}
+                </h2>
+              )}
             </div>
 
             {/* Question */}

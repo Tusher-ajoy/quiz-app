@@ -6,6 +6,7 @@ import classes from "./Footer.module.css";
 const Footer = () => {
   return (
     <footer className={`pt-5 pb-3 ${classes.footerBody}`}>
+      {/* <Timer initialMinute={1} initialSeconds={1} /> */}
       <ul className={classes.socialLinkContainer}>
         <li className={classes.socialLink}>
           <a
