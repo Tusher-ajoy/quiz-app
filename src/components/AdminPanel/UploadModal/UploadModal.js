@@ -13,13 +13,13 @@ const UploadModal = ({ modalIsOpen, closeModal }) => {
     retake: Yup.number().required("retake number is mandatory"),
   });
   const formOption = { resolver: yupResolver(formSchema) };
-  const { register, handleSubmit, reset, formState } = useForm(formOption);
+  const { register, handleSubmit, formState } = useForm(formOption);
   const { errors } = formState;
 
   const onSubmit = (data) => {
     const quizData = { ...data, qId: id };
 
-    fetch(`http://localhost:5000/addQuiz`, {
+    fetch(`https://quizzzical.herokuapp.com/addQuiz`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(quizData),

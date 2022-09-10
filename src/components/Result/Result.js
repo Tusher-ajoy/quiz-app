@@ -20,7 +20,7 @@ const Result = () => {
   const { state } = useLocation();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/getQuestion`, {
+    fetch(`https://quizzzical.herokuapp.com/getQuestion`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -32,7 +32,7 @@ const Result = () => {
   }, [id]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/getEnrolledData", {
+    fetch("https://quizzzical.herokuapp.com/getEnrolledData", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

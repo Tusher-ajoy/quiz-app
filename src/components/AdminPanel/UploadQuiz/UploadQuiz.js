@@ -26,7 +26,9 @@ const UploadQuiz = () => {
 
   //fetch data form temp quiz collection
   const fetchData = async () => {
-    const response = await fetch("http://localhost:5000/allTempQuiz");
+    const response = await fetch(
+      "https://quizzzical.herokuapp.com/allTempQuiz"
+    );
     if (!response.ok) {
       throw new Error("Data could not be fetched!");
     } else {
@@ -46,7 +48,7 @@ const UploadQuiz = () => {
 
   //delete data from temp quiz collection
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/deleteTempQuiz/${id}`, {
+    fetch(`https://quizzzical.herokuapp.com/deleteTempQuiz/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

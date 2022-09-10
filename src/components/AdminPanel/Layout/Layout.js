@@ -10,7 +10,7 @@ const Layout = () => {
   const { currentUser } = useAuth();
   const { email } = currentUser;
   useEffect(() => {
-    fetch("http://localhost:5000/getAdmin", {
+    fetch("https://quizzzical.herokuapp.com/getAdmin", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email }),

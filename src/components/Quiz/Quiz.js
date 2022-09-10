@@ -50,7 +50,7 @@ const Quiz = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/getQuestion`, {
+    fetch(`https://quizzzical.herokuapp.com/getQuestion`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -61,7 +61,7 @@ const Quiz = () => {
       .then((data) => setQuestions(data));
   }, [state]);
   useEffect(() => {
-    fetch("http://localhost:5000/getQuizzes", {
+    fetch("https://quizzzical.herokuapp.com/getQuizzes", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -119,7 +119,7 @@ const Quiz = () => {
     dispatcher({ type: "ADD", payload: singleAnswer });
     const { email } = currentUser;
     const ansObj = { email, userAnswer, correctAns, qId: state.qId };
-    fetch("http://localhost:5000/enrolled", {
+    fetch("https://quizzzical.herokuapp.com/enrolled", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

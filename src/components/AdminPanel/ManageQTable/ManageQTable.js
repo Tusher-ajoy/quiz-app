@@ -9,7 +9,7 @@ const ManageQTable = ({ qId }) => {
   const [eDeleted, setEDeleted] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/oneTempQuiz", {
+    fetch("https://quizzzical.herokuapp.com/oneTempQuiz", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -21,7 +21,7 @@ const ManageQTable = ({ qId }) => {
   }, [qId]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/enrolled/${qId}`)
+    fetch(`https://quizzzical.herokuapp.com/enrolled/${qId}`)
       .then((res) => res.json())
       .then((data) => setEnrolled(data.length));
   }, [qId]);
@@ -29,7 +29,7 @@ const ManageQTable = ({ qId }) => {
   //delete data
   const handleDelete = (id) => {
     //delete data form quizzes collection
-    fetch(`http://localhost:5000/deleteQuizzes/${id}`, {
+    fetch(`https://quizzzical.herokuapp.com/deleteQuizzes/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -37,7 +37,7 @@ const ManageQTable = ({ qId }) => {
         setQDeleted(result);
       });
     //delete data form enroll collection
-    fetch(`http://localhost:5000/deleteEnroll/${id}`, {
+    fetch(`https://quizzzical.herokuapp.com/deleteEnroll/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

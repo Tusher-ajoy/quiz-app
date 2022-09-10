@@ -6,7 +6,7 @@ const SeeModal = ({ modalIsOpen, closeModal }) => {
   const [questions, setQuestions] = useState([]);
   const { id, modalOpen } = modalIsOpen;
   useEffect(() => {
-    fetch(`http://localhost:5000/getQuestion`, {
+    fetch(`https://quizzzical.herokuapp.com/getQuestion`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ id }),
@@ -17,7 +17,7 @@ const SeeModal = ({ modalIsOpen, closeModal }) => {
 
   //delete question from questions collection
   const handleDelete = (e, id) => {
-    fetch(`http://localhost:5000/deleteQuestion/${id}`, {
+    fetch(`https://quizzzical.herokuapp.com/deleteQuestion/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

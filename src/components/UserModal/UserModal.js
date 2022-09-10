@@ -12,7 +12,7 @@ const UserModal = ({ modalIsOpen, closeModal, name, email }) => {
   const { currentUser } = useAuth();
 
   useEffect(() => {
-    fetch("http://localhost:5000/getEnrolledDataByEmail", {
+    fetch("https://quizzzical.herokuapp.com/getEnrolledDataByEmail", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -24,7 +24,7 @@ const UserModal = ({ modalIsOpen, closeModal, name, email }) => {
   }, [currentUser]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/getAdmin", {
+    fetch("https://quizzzical.herokuapp.com/getAdmin", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email }),

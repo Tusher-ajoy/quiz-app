@@ -32,7 +32,7 @@ const CreateQuiz = () => {
     formData.append("description", description);
     formData.append("price", price);
     formData.append("file", img[0]);
-    fetch("http://localhost:5000/createQuiz", {
+    fetch("https://quizzzical.herokuapp.com/createQuiz", {
       method: "POST",
       body: formData,
     })

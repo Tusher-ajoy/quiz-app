@@ -9,7 +9,7 @@ const SeeSubmission = () => {
   const location = useLocation();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/enrolled/${qId}`)
+    fetch(`https://quizzzical.herokuapp.com/enrolled/${qId}`)
       .then((res) => res.json())
       .then((data) => setEnrolled(data));
   }, [qId]);

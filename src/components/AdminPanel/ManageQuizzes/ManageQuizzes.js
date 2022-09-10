@@ -5,7 +5,7 @@ const ManageQuizzes = () => {
   const [quizzes, setQuizzes] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:5000/allQuizzes")
+    fetch("https://quizzzical.herokuapp.com/allQuizzes")
       .then((res) => res.json())
       .then((data) => {
         setQuizzes(data);

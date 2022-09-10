@@ -7,13 +7,13 @@ const Dashboard = () => {
   const [uploadedQuiz, setUploadedQuiz] = useState(0);
 
   useEffect(() => {
-    fetch("http://localhost:5000/allTempQuiz")
+    fetch("https://quizzzical.herokuapp.com/allTempQuiz")
       .then((res) => res.json())
       .then((data) => setTotalQuiz(data.length));
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/allQuizzes")
+    fetch("https://quizzzical.herokuapp.com/allQuizzes")
       .then((res) => res.json())
       .then((data) => setUploadedQuiz(data.length));
   }, []);

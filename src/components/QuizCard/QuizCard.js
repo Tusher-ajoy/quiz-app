@@ -12,7 +12,7 @@ const QuizCard = ({ qId }) => {
   const { currentUser } = useAuth();
   const navigate = useNavigate();
   useEffect(() => {
-    fetch("http://localhost:5000/oneTempQuiz", {
+    fetch("https://quizzzical.herokuapp.com/oneTempQuiz", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -24,13 +24,13 @@ const QuizCard = ({ qId }) => {
   }, [qId]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/enrolled/${qId}`)
+    fetch(`https://quizzzical.herokuapp.com/enrolled/${qId}`)
       .then((res) => res.json())
       .then((data) => setEnrolled(data.length));
   }, [qId]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/getEnrolledData", {
+    fetch("https://quizzzical.herokuapp.com/getEnrolledData", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -44,7 +44,7 @@ const QuizCard = ({ qId }) => {
       .then((data) => setTakeRetake(data.length));
   }, [cardDetails, currentUser]);
   useEffect(() => {
-    fetch("http://localhost:5000/getQuizzes", {
+    fetch("https://quizzzical.herokuapp.com/getQuizzes", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
