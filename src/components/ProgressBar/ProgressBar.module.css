@@ -1,0 +1,19 @@
+/* answer progress bar */
+.progressBar {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 10rem;
+  height: 1rem;
+}
+.progressBar::-webkit-progress-bar {
+  background-color: #e9ecef;
+  border-radius: 10px;
+}
+.progressBar::-webkit-progress-value {
+  background: linear-gradient(
+    to right,
+    var(--main-bg-color) 0%,
+    var(--main-text-color) 100%
+  );
+  border-radius: 10px;
+}

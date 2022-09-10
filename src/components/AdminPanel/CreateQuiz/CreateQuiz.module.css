@@ -1,0 +1,22 @@
+.quizForm > input {
+  width: 30rem;
+  margin: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  box-shadow: var(--box-shadow);
+  background-color: #fff;
+}
+.quizForm > .isInvalid {
+  border-bottom: 2px solid red;
+}
+/* on mobile */
+@media (max-width: 900px) {
+  /* hiding first div */
+  .quizForm > input {
+    width: 25rem;
+  }
+  .quizForm > input[type="submit"] {
+    margin-left: 9rem !important;
+  }
+}

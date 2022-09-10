@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+Quiz app Project features :
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+There are two sides of the projects. Admin and User
 
-## Available Scripts
+Admin can do the bellow tasks
 
-In the project directory, you can run:
+Create paid and unpaid quizzes
+Manage quizzes
+Manage and see quiz data for example number of submissions, results
+Quiz will have these data : Quiz name, quiz picture, descriptions, free or paid and quiz questions with their options.
 
-### `npm start`
+Quiz settings =>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Admin will need to set up bellow settings for a quiz
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Add n number of quizzes
+Mark one or more options as answers. If there are more than one answer, user have to choose all the answers to get it right.
+Quiz can have 2 types of timing. A. Per question wise timing B. Whole quiz wise timing.
+Admin can set up if user can see answers as they submit the quiz or they need to wait until the end of the quiz questions
+Admin can set if user can see their correct answers as they submit a quiz answer or they have to wait until the end of the all questions
+Admin can set number of retake a user can take.
+Admin can set if users should see the answer at the end of submission, or as they answer the question or they cannot see until all retake is taken
+Answer can be revealed after all the retake is taken or user can choose himself to reveal the answer at the end of the quiz and this will have make a user’s available retake to 0 so that he cannot take any retake
 
-### `npm test`
+User end ⇒
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Sing up
+Login
+See available quiz lists and free or paid
+See total number of user took this quiz with the quiz listing
+User can enrol to a quiz and start submitting quiz answers based on the settings from admin
+Quiz questions will be shown 1 at a time
+User can see their transactions and refunds if they have any

@@ -1,0 +1,29 @@
+thead {
+  position: sticky;
+  top: 0;
+  background-color: var(--main-text-color);
+  color: #fff;
+}
+
+.tableWrapper {
+  max-height: 32rem;
+  overflow-y: scroll;
+}
+
+.actionBtn {
+  border: none;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+.seeBtn {
+  background-color: #b2cbf1;
+}
+.addBtn {
+  background-color: #b8ddcc;
+}
+.uploadBtn {
+  background-color: #b2dfe9;
+}
+.deleteBtn {
+  background-color: #f1bcc0;
+}

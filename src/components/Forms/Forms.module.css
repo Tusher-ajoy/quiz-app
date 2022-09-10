@@ -1,0 +1,27 @@
+/*google sign up and login button*/
+.googleSign {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 3px gray;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* making horizontal line with 'OR' in the middle */
+.centerOr {
+  width: 90%;
+  text-align: center;
+  border-bottom: 1px solid gray;
+  line-height: 0.1em;
+  margin: 20px auto 10px;
+}
+.centerOr span {
+  background: #f2f3f9;
+  padding: 0 10px;
+}
+
+/* for invalid input */
+.isInvalid {
+  border: 1px solid red !important;
+}

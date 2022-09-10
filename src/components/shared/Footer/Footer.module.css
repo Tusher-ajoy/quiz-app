@@ -1,0 +1,22 @@
+/*Footer*/
+.footerBody {
+  background-image: linear-gradient(
+    to right,
+    var(--main-text-color),
+    var(--main-bg-color)
+  );
+  color: white;
+  text-align: center;
+}
+/* Social links */
+.socialLinkContainer {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+.socialLinkContainer > .socialLink {
+  display: inline-block;
+  margin: 0 2rem;
+}
+.socialLinkContainer > .socialLink img {
+  width: 3rem;
+}

@@ -1,0 +1,10 @@
+.notFound {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+}
+.notFound > img {
+  width: 30rem;
+  overflow: hidden;
+  margin: 0 auto;
+}

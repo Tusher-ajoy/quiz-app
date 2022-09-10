@@ -1,0 +1,27 @@
+.validation {
+  height: 100vh;
+}
+.formContainer {
+  background-color: #f2f3f9;
+  padding: 1rem 1rem;
+  border-radius: 10px;
+}
+.formContainer > form > input {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 3px gray;
+  border: none;
+}
+
+/* on mobile */
+@media (max-width: 900px) {
+  /* hiding first div */
+  .mobileHidden {
+    display: none;
+  }
+  .validation {
+    background-color: #f2f3f9;
+  }
+}

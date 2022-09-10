@@ -1,0 +1,11 @@
+.totalScore {
+  height: 5rem;
+  margin: 10px 0;
+  background-color: #1bf797;
+  color: #fff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--box-shadow);
+}

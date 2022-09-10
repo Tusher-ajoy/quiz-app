@@ -1,0 +1,28 @@
+.modalContainer {
+  width: 40vw;
+  max-height: 80vh;
+  overflow-y: scroll;
+  background-color: #fff;
+  position: absolute;
+  top: 10vh;
+  left: 30vw;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+}
+.questionCard {
+  background-color: #cbdbd5;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+/* on mobile */
+@media (max-width: 900px) {
+  .modalContainer {
+    width: 80vw;
+    left: 10vw;
+    max-height: 80vh;
+    overflow-y: scroll;
+  }
+}

@@ -1,0 +1,11 @@
+thead {
+  position: sticky;
+  top: 0;
+  background-color: var(--main-text-color);
+  color: #fff;
+}
+
+.tableWrapper {
+  max-height: 32rem;
+  overflow-y: scroll;
+}
